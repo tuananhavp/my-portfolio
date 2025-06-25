@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-preahvihear);
+  --font-sans: var(--font-plus-jakarta-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #140a22;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+@keyframes border-light-runner {
+  0% {
+    clip-path: inset(99% 0 0 99% round 1rem);
+    opacity: 1;
+  }
+  24% {
+    clip-path: inset(0 0 0 99% round 1rem);
+    opacity: 1;
+  }
+  25% {
+    clip-path: inset(0 0 99% 99% round 1rem);
+    opacity: 1;
+  }
+  49% {
+    clip-path: inset(0 0 99% 0 round 1rem);
+    opacity: 1;
+  }
+  50% {
+    clip-path: inset(0 99% 99% 0 round 1rem);
+    opacity: 1;
+  }
+  74% {
+    clip-path: inset(0 99% 0 0 round 1rem);
+    opacity: 1;
+  }
+  75% {
+    clip-path: inset(99% 99% 0 0 round 1rem);
+    opacity: 1;
+  }
+  99% {
+    clip-path: inset(99% 0 0 0 round 1rem);
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(99% 0 0 99% round 1rem);
+    opacity: 1;
+  }
+}
+
+.light-border-runner {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.light-border-runner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  border: 2px solid transparent;
+  pointer-events: none;
+  box-shadow: 0 0 24px 6px #00fff7, 0 0 6px 2px #ff27e9;
+  border-image: linear-gradient(90deg, #00fff7, #ff27e9, #00fff7) 1;
+  z-index: 1;
+  animation: border-light-runner 3s linear infinite;
+}
