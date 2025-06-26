@@ -17,6 +17,11 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "Portfolio",
   description: "A showcase of Tuan Anh's work and skills",
+  icons: {
+    icon: "/logo-dark.svg",
+    shortcut: "/logo-dark.svg",
+    apple: "/logo-dark.svg",
+  },
 };
 
 export default function RootLayout({

@@ -4,7 +4,7 @@ import { Projects_List } from "@/constants";
 import ProjectCard from "@/components/ProjectCard";
 import { motion, useScroll } from "framer-motion";
 
-const Projects: React.FC = () => {
+const Projects = () => {
   const ref = useRef<HTMLElement>(null);
   const {} = useScroll({
     target: ref,

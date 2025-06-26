@@ -19,7 +19,7 @@ interface ProjectCardProps {
   index: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
+const ProjectCard = ({ project, index }: ProjectCardProps) => {
   const { title, description, image, link, github, technologies, features } = project;
   const [isHovered, setIsHovered] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
