@@ -2,6 +2,7 @@ import { About_Info } from "@/constants";
 import Image from "next/image";
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
+import PersonalityCard from "@/components/PersonalityCard";
 
 const About = () => {
   const containerRef = useRef(null);
@@ -11,13 +12,12 @@ const About = () => {
     offset: ["start end", "start start"],
   });
 
-  const ScrollLeftTo = useTransform(scrollYProgress, [0.2, 0.6], ["-20%", "0%"]);
-  const scrollRightTo = useTransform(scrollYProgress, [0.2, 0.6], ["20%", "0%"]);
+  const ScrollLeftTo = useTransform(scrollYProgress, [0, 0.3], ["-20%", "0%"]);
+  const scrollRightTo = useTransform(scrollYProgress, [0, 0.3], ["20%", "0%"]);
 
   return (
     <section id="about" className="min-h-screen">
       <motion.div className="container mx-auto px-4" style={{}}>
-        {/* About me */}
         <div className="flex flex-col text-center items-center xl:w-3/4 w-full mx-auto">
           <h2 className="md:text-5xl lg:text-6xl text-3xl font-bold mb-6">About Me</h2>
           <p className="lg:text-lg text-base text-gray-700 mb-8">
@@ -30,7 +30,7 @@ const About = () => {
             </span>
           </p>
         </div>
-        {/* Infor for more */}
+
         <motion.div
           initial="hidden"
           animate="visible"
@@ -66,17 +66,12 @@ const About = () => {
             <div className="grid grid-cols-1 xl:grid-cols-2 xl:gap-3 gap-1 mt-8">
               {About_Info.map((item) => {
                 return (
-                  <div
-                    key={item.title}
-                    className="flex items-start gap-2 mt-6 hover:shadow-md hover:shadow-white
-                     transition-shadow duration-500 py-4 px-2 cursor-pointer hover:bg-white/5 rounded-lg "
-                  >
-                    <span className="2xl:text-2xl text-xl text-blue-400">{item.icon}</span>
-                    <div>
-                      <h3 className="2xl:text-lg text-base">{item.title}</h3>
-                      <p className="text-gray-700">{item.description}</p>
-                    </div>
-                  </div>
+                  <PersonalityCard
+                    key={`person-${item.title}`}
+                    title={item.title}
+                    description={item.description}
+                    icon={item.icon}
+                  />
                 );
               })}
             </div>

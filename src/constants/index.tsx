@@ -1,3 +1,4 @@
+import { Project } from "@/components/ProjectCard";
 import { BiMouseAlt, BiPaperclip, BiReceipt } from "react-icons/bi";
 import { FaFacebook, FaGithub, FaLinkedin, FaNodeJs } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io";
@@ -9,15 +10,15 @@ import { SiExpress, SiTypescript } from "react-icons/si";
 export const Header_Navigation = [
   { name: "Home", href: "home" },
   { name: "About", href: "about" },
-  { name: "Projects", href: "projects" },
-  { name: "Contact", href: "contact" },
+  { name: "Skills", href: "skill" },
+  { name: "Projects", href: "project" },
 ];
 
 export const Footer_Navigation = [
-  { name: "Contact", href: "/contact", icon: <MdOutlineEmail /> },
+  { name: "Contact", href: "mailto:tuananhavp@gmail.com", icon: <MdOutlineEmail /> },
   { name: "GitHub", href: "github.com/tuananhavp", icon: <FaGithub /> },
   { name: "Facebook", href: "facebook.com/anh2xx", icon: <FaFacebook /> },
-  { name: "LinkedIn", href: "linkedin.com/in/tuananhavp", icon: <FaLinkedin /> },
+  { name: "LinkedIn", href: "www.linkedin.com/in/tuấn-anh-60aaa7350", icon: <FaLinkedin /> },
 ];
 
 export const About_Info = [
@@ -53,4 +54,16 @@ export const Skills = [
   { name: "Next.js", icon: <RiNextjsFill /> },
   { name: "Express", icon: <SiExpress /> },
   { name: "NodeJS", icon: <FaNodeJs /> },
+];
+
+export const Projects_List: Project[] = [
+  {
+    title: "E-commerce Platform",
+    description:
+      "A full-featured e-commerce platform with product management, cart functionality, and payment integration.",
+    image: "/jinstore.jpg",
+    link: "https://ecommerce-project-nine-ashen.vercel.app/",
+    github: "https://github.com/tuananhavp/ecommerce",
+    technologies: ["React", "Next.js", "Firebase", "Tailwind CSS", "Zustand", "React Hook Form", "Zod"],
+  },
 ];

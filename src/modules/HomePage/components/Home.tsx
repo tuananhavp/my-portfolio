@@ -2,6 +2,7 @@ import PrimaryButton from "@/components/PrimaryButton";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import { motion, Variants } from "motion/react";
+import Link from "next/link";
 
 const Home = () => {
   const variants: Variants = {
@@ -16,7 +17,7 @@ const Home = () => {
           variants={variants}
           initial="offscrren"
           whileInView={"onscreen"}
-          viewport={{ amount: 0.6 }}
+          viewport={{ amount: 0.3 }}
         >
           {/* Title */}
           <div className="flex flex-col">
@@ -37,7 +38,9 @@ const Home = () => {
               </p>
               <PrimaryButton>
                 <div className="flex items-center gap-2">
-                  <span>View My Work</span>
+                  <Link href={"#project"}>
+                    <span>View My Work</span>
+                  </Link>
                   <FaArrowRight className="lg:text-base text-xs" />
                 </div>
               </PrimaryButton>
