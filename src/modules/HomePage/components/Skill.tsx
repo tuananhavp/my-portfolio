@@ -20,7 +20,7 @@ const Skill = () => {
     },
   };
   return (
-    <section className="py-10 min-h-screen" id="skill">
+    <section className="py-10 mt-10 min-h-screen" id="skill">
       <motion.div
         initial="offscreen"
         whileInView="onscreen"
@@ -36,7 +36,7 @@ const Skill = () => {
             height={500}
           />
         </motion.div>
-        <div className="w-full lg:w-1/2 flex flex-col items-start justify-center mt-8 md:mt-0 lg:px-12 px-1">
+        <div className="w-full lg:w-1/2 flex flex-col lg:items-start items-center justify-center mt-8 md:mt-0 lg:px-12 px-1">
           <h2 className="md:text-base lg:text-2xl text-md font-bold mb-6 lg:text-left text-center">
             I&apos;m currently looking to join a cross-functional team that values improving people&apos;s lives through
             accessible design{" "}

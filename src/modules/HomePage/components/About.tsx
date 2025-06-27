@@ -1,22 +1,20 @@
 import { About_Info } from "@/constants";
 import Image from "next/image";
-import React, { useRef } from "react";
-import { motion, useScroll, useTransform } from "motion/react";
+import React from "react";
+import { motion, Variants } from "motion/react";
 import PersonalityCard from "@/components/PersonalityCard";
 
 const About = () => {
-  const containerRef = useRef(null);
-
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "start start"],
-  });
-
-  const ScrollLeftTo = useTransform(scrollYProgress, [0, 0.3], ["-20%", "0%"]);
-  const scrollRightTo = useTransform(scrollYProgress, [0, 0.3], ["20%", "0%"]);
-
+  const variants: Variants = {
+    hidden: { opacity: 0, y: 75 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", bounce: 0.4, duration: 0.8 },
+    },
+  };
   return (
-    <section id="about" className="min-h-screen">
+    <section id="about" className="min-h-screen mt-10">
       <motion.div className="container mx-auto px-4" style={{}}>
         <div className="flex flex-col text-center items-center xl:w-3/4 w-full mx-auto">
           <h2 className="md:text-5xl lg:text-6xl text-3xl font-bold mb-6">About Me</h2>
@@ -33,25 +31,15 @@ const About = () => {
 
         <motion.div
           initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: { opacity: 0, y: 75 },
-            visible: {
-              opacity: 1,
-              y: 0,
-            },
-          }}
-          transition={{ delay: 0.3 }}
+          whileInView={"visible"}
+          variants={variants}
+          viewport={{ amount: 0.3 }}
           className="lg:flex-row flex flex-col items-center justify-between lg:px-12 px-1"
-          ref={containerRef}
         >
-          <motion.div className="flex items-center relative" style={{ translateX: ScrollLeftTo }}>
+          <motion.div className="flex items-center relative overflow-hidden">
             <Image className="object-cover z-10" src={"/avatar.png"} alt="Personal Avatar" width={400} height={500} />
           </motion.div>
-          <motion.article
-            style={{ translateX: scrollRightTo }}
-            className="lg:w-1/2 flex flex-col w-full mx-auto mt-8 md:mt-0 "
-          >
+          <motion.article className="lg:w-1/2 flex flex-col w-full mx-auto mt-8 md:mt-0 ">
             <div className="flex flex-col items-start gap-8 mt-8 ">
               <h2 className="md:text-2xl lg:text-3xl text-base font-bold mb-6">Precision in Code, Passion in Craft</h2>
               <p className="lg:text-lg text-base text-gray-700">

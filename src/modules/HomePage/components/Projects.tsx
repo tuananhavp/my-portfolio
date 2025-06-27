@@ -12,7 +12,7 @@ const Projects = () => {
   });
 
   return (
-    <section id="project" className="min-h-screen py-20" ref={ref}>
+    <section id="project" className="min-h-screen py-20 mt-10" ref={ref}>
       <motion.div
         className="container mx-auto px-4"
         initial={{ opacity: 0, y: -50 }}

@@ -1,5 +1,6 @@
-import { Footer_Navigation } from "@/constants";
 import React from "react";
+import IconNavigation from "@/components/IconNavigation";
+import { Icon_Navigation } from "@/constants";
 
 const Footer = () => {
   return (
@@ -15,22 +16,10 @@ const Footer = () => {
             </p>
           </div>
         </div>
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex space-x-6">
-            {Footer_Navigation.map((item) => {
-              return (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-gray-400 transition duration-300 flex items-center space-x-2"
-                >
-                  <span className="md:text-2xl text-base">{item.icon}</span>
-                </a>
-              );
-            })}
-          </div>
+        <div className="container mx-auto px-4 py-4 flex space-x-6">
+          {Icon_Navigation.map((item) => (
+            <IconNavigation key={item.name} item={item} />
+          ))}
         </div>
         <div className="container mx-auto px-4 py-4 text-center">
           <p className="md:text-sm text-[10px]">&copy; {new Date().getFullYear()} Tuan Anh. All rights reserved.</p>

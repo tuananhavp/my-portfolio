@@ -8,19 +8,18 @@ import { RiCss3Fill, RiHtml5Fill, RiNextjsFill, RiReactjsFill, RiTailwindCssFill
 import { SiExpress, SiTypescript } from "react-icons/si";
 
 export const Header_Navigation = [
-  { name: "Home", href: "home" },
-  { name: "About", href: "about" },
-  { name: "Skills", href: "skill" },
-  { name: "Projects", href: "project" },
+  { name: "Home", href: "home", icon: <RiHtml5Fill /> },
+  { name: "About", href: "about", icon: <RiReactjsFill /> },
+  { name: "Skills", href: "skill", icon: <RiCss3Fill /> },
+  { name: "Projects", href: "project", icon: <RiNextjsFill /> },
 ];
 
-export const Footer_Navigation = [
+export const Icon_Navigation = [
   { name: "Contact", href: "mailto:tuananhavp@gmail.com", icon: <MdOutlineEmail /> },
-  { name: "GitHub", href: "github.com/tuananhavp", icon: <FaGithub /> },
-  { name: "Facebook", href: "facebook.com/anh2xx", icon: <FaFacebook /> },
-  { name: "LinkedIn", href: "www.linkedin.com/in/tuấn-anh-60aaa7350", icon: <FaLinkedin /> },
+  { name: "GitHub", href: "https://github.com/tuananhavp", icon: <FaGithub /> },
+  { name: "Facebook", href: "https://facebook.com/anh2xx", icon: <FaFacebook /> },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/tuấn-anh-60aaa7350", icon: <FaLinkedin /> },
 ];
-
 export const About_Info = [
   {
     title: "Responsibilities",
