@@ -62,7 +62,7 @@ export const Projects_List: Project[] = [
       "A full-featured e-commerce platform with product management, cart functionality, and payment integration.",
     image: "/jinstore.jpg",
     link: "https://ecommerce-project-nine-ashen.vercel.app/",
-    github: "https://github.com/tuananhavp/ecommerce",
+    github: "https://github.com/tuananhavp/ecommerce-project",
     technologies: ["React", "Next.js", "Firebase", "Tailwind CSS", "Zustand", "React Hook Form", "Zod"],
   },
 ];
