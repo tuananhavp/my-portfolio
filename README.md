@@ -26,7 +26,7 @@ When I'm not immersed in code, I enjoy exploring new technologies, contributing 
 
 This repository contains the source code for my personal portfolio website, where I showcase my projects and skills. Built with Next.js and Tailwind CSS, it features responsive design, smooth animations via Framer Motion, and interactive components that demonstrate my technical capabilities.
 
-Visit my live portfolio at: [tuananhavp.dev](my-portfolio-eight-phi-34.vercel.app)
+Visit my live portfolio at: [https://my-portfolio-eight-phi-34.vercel.app/]
 
 ## 📫 Connect With Me
 
